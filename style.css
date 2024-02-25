@@ -1,0 +1,641 @@
+/* Select all */
+*,
+*:before,
+*:after{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body, html {
+    background-color: black;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Pop Up */
+.popup {
+    background-color: grey;
+    width: 90%; /* Adjusted for small devices */
+    max-width: 450px; /* Maximum width */
+    padding: 30px 5%; /* Adjusted for small devices */
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 50%;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    display: none;
+    z-index: 1;
+}
+.popup button {
+    display: block;
+    margin: 0 auto 20px; /* Adjusted for small devices */
+    background-color: transparent;
+    color: #AAB7B8;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.popup p {
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+}
+.close {
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 5px 0;
+}
+.close:hover {
+    transform: scale(1.1);
+}
+
+/* Nav Bar */
+.nav-section {
+    background-color: transparent;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Stick it to the top */
+    z-index: 1000; /* Set a high z-index to ensure it's on top of other content */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    transition: color 0.3s ease; /* Add transition property for smooth color change */
+}
+
+.nav-link:hover {
+    color: #ffffff; /* Change color to white on hover */
+}
+
+/* Hamburger Menu Icon */
+.menu-toggle {
+    display: none; /* Hide by default */
+    cursor: pointer;
+}
+
+.menu-toggle .icon {
+    display: block;
+    color: white; /* Set hamburger menu icon color to white */
+    font-size: 24px;
+}
+
+/* Close Icon */
+.menu-toggle .icon.close-icon {
+    display: none; /* Initially hide close icon */
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show hamburger menu on smaller screens */
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .nav-bar {
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        transition: max-height 0.3s ease-out;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    .nav-section.active .nav-bar {
+        display: flex;
+        flex-direction: column;
+        max-height: 300px;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .menu-toggle .icon {
+        display: block;
+        color: white; /* Set hamburger menu icon color to white */
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .menu-toggle .icon.close-icon {
+        display: none;
+    }
+
+    .nav-link {
+        color: white;
+    }
+}
+
+
+.nav-link:hover {
+    color: #ffffff; /* Change color to white on hover */
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .nav-bar {
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        transition: max-height 0.3s ease-out;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    .nav-section.active .nav-bar {
+        display: flex;
+        flex-direction: column;
+        max-height: 300px;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for small devices here */
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("pictures/hero_endframe__ea0qze85eyi6_large_2x.jpg");
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+    0% { transform: translate(-50%,  -50%); }
+    50%  { transform: translate(-50%, -50px); }
+    100%   { transform: translate(-50%, -50%); }    
+}
+.my-name {
+    font-size: 50px;
+    padding-bottom: 50px;
+}
+.hero-des {
+    font-size: 20px;
+}
+
+/* About Me */
+.pic-of-brad {
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-left: 5%; /* Adjusted for small devices */
+    margin-top: 3px;
+}
+
+.about-header {
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    text-align: left;
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.about-text {
+    width: 90%; /* Adjusted for small devices */
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.about-title{
+    font-size: 40px;
+}
+
+/* Resume Button */
+.resume-btn {
+    width: 90%; /* Adjusted for small devices */
+    max-width: 210px; /* Maximum width */
+    font-family: "Poppins", sans-serif;
+    display: block;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 4px 0;
+    border: 5px solid;
+    border-image: linear-gradient(to right, #ff4b2b, #ff416c);
+
+}
+.resume-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Skills Section */
+.skills-section {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    font-size: 40px;
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    perspective: 1000px;
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(-180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: linear-gradient(to bottom right, #ff4b2b, #ff416c);
+}
+
+.card-back {
+    background: white;
+    color: #fff;
+    transform: rotateY(180deg);
+    background: linear-gradient(to bottom right, #000000,  #000000);
+}
+
+.card h2 {
+    font-size: 70px;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Project Section */
+.project-section {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    font-size: 40px;
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+}
+.project-text {
+    width: 90%; /* Adjusted for small devices */
+    max-width: calc(50% - 10px); /* Adjusted for small devices */
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+/* In The Works Section */
+.working-section {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    font-size: 40px;
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+}
+.cards-container-2 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-2 {
+    width: 300px;
+    height: 350px;
+    margin-top: 20px;
+    background-image: url("pictures/Comptia\ A.png");
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-3 {
+    width: 300px;
+    height: 350px;
+    margin-top: 20px;
+    background-image: url("pictures/security.png");
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-4 {
+    width: 300px;
+    height: 350px;
+    margin-top: 20px;
+    background-image: url("pictures/network.png");
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-5 {
+    width: 300px;
+    height: 350px;
+    margin-top: 20px;
+    background-image: url("pictures/cysa.png");
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front-2 {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Other Section */
+
+.other-section {
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    text-align: left;
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.other-text {
+    width: 90%; /* Adjusted for small devices */
+    max-width: calc(50% - 10px); /* Adjusted for small devices */
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.instagram-icon {
+    color: white;
+   font-size: 50px;
+   margin-right: 20px;
+   text-align: center;
+}
+.linkedin-icon {
+    color: white;
+   font-size: 50px;
+   text-align: center;
+}
+.github-icon {
+    color: white;
+   font-size: 50px;
+   margin-left: 20px;
+   text-align: center;
+}
+
+.instagram-icon:hover, .linkedin-icon:hover, .github-icon:hover {
+    color:aqua;
+}
+
+
+/* Contact Section */
+.contact-section {
+    text-align: center; /* Center the text */
+    margin-bottom: 40px;
+    margin-top: 60px;
+    font-size: 40px;
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+}
+.contact {
+    min-height: 10vh;
+    padding: 50px;
+    text-align: center;
+}
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+.contact-form{
+    text-align:center;
+}
+.contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+input,textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f9fa;
+    color: #333;
+}
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #bbb;
+}
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4caf50;
+    color:#fff;
+    border:none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.contact-info {
+    text-align: left;
+    text-align: center;
+}
+.contact-info h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+.contact-info p {
+    margin-bottom: 10px;
+    color: white;
+}
+.contact-info {
+    color: #4caf50;
+    margin-right: 10px;
+}
+@media screen and (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer Section */
+.footer-section {
+    color: white;
+    text-align: center;
+    font-size: 8px;
+}
+
+
+.main-video {
+    display: flex; /* Make the main container a flex container */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    width: 640px; /* Set a width that accommodates both videos */
+    margin: 20px auto;
+    font-family: "Roboto", sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-container {
+    width: calc(50% - 10px); /* Set each video container to take up half the width minus margin */
+    position: relative;
+}
+
+.video-container video {
+    width: 100%;
+}
+
+.video-container .hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: black;
+    font-weight: 400;
+    padding: 8px 16px;
+    border-radius: 8px;
+    pointer-events: none;
+    box-shadow: 4px 4px 50px -4px rgba(0,0,0,0.8);
+    opacity: 0;
+    letter-spacing: 0.8px;
+    transition: all 400ms ease;
+}
+
+.video-container .hover-text.active {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .video-container {
+        width: calc(100% - 20px); /* Set each video container to take up full width on smaller screens */
+        margin: 10px 0; /* Adjust margin for smaller screens */
+    }
+}
